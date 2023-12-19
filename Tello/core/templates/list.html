@@ -1,0 +1,409 @@
+{% extends 'base.html' %}
+{% load static %}
+    {% block css %}
+    <link rel="stylesheet" href="{% static 'css/checkboxes.css' %}">
+    <style>
+        .slick-next,
+        .slick-prev {
+            background-color: rgb(209, 202, 202);
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            z-index: 1;
+        }
+
+        .slick-next:hover,
+        .slick-prev:hover {
+            background-color: rgb(77, 52, 52);
+
+        }
+
+        .slick-next:focus,
+        .slick-prev:focus {
+            background-color: rgb(68, 63, 63);
+
+        }
+
+        .slick-slide {
+            margin: 0 10px;
+        }
+
+        .card-header {
+            background-color: transparent;
+        }
+
+        .btn-link {
+            color: #4F4F4F;
+        }
+
+        .btn-link:hover {
+            color: #4F4F4F;
+            text-decoration: none;
+        }
+        .page-link {
+            margin-left: 32px;
+        }
+        .page-item:first-child .page-link {
+            margin-left: 0;
+            border-radius: 50%;
+            width: 36px;
+            height: 36px;
+        }
+        .page-item:last-child .page-link {
+            border-radius: 50%;
+            width: 36px;
+            height: 36px;
+}
+.num {
+    border: none;
+}
+    </style>
+    {% endblock %}
+
+    {% block content %}
+    <div class="main mb-5" style="margin-top: 26px;">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="mobile-tabs justify-content-center" style="display: none; width: 100%;">
+                    <div class="dropdown" style="width: 100%;">
+                        <button class="btn" type="button" id="dropdownMenuButton"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                            style="padding: 15px; border: 1px solid #EDF1F7; width: 100%; border-radius: 0;">
+                           <img src="{% static 'img/swap.svg' %}" style="width: 24px;" alt=""> Ən yenilər
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="?title=news">Ən yenilər</a>
+                                <a class="dropdown-item" href="?title=cheap">Əvvəlcə ucuz</a>
+                                <a class="dropdown-item" href="?title=expensive">Əvvəlcə bahalı</a>
+                        </div>
+                    </div>
+                    <div class="dropdown" style="width: 100%;">
+                        <button id="filter-show-button" class="btn" type="button"
+                            style="padding: 16px; border: 1px solid #EDF1F7; width: 100%; border-radius: 0;">
+                           <img src="{% static 'img/filter.svg' %}" style="width: 20px;" alt=""> Filterlər
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="?title=news">Ən yenilər</a>
+                                <a class="dropdown-item" href="?title=cheap">Əvvəlcə ucuz</a>
+                                <a class="dropdown-item" href="?title=expensive">Əvvəlcə bahalı</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 first-list-part col-12" style="padding-left: 79px;">
+                    <p class="list-path" style="margin-bottom: 42px;">Ana səhifə <img src="{% static 'img/strelka.svg' %}"
+                            style="width: 9px; margin-top: -2px; margin-left: 8px; margin-right: 8px;" alt="">Telefonlar
+                        <img src="{% static 'img/strelka.svg' %}"
+                            style="width: 9px; margin-top: -2px; margin-left: 8px; margin-right: 8px;" alt=""><span
+                            style="color: #828282;">Apple</span></p>
+                    <div id="accordion" style="width: 305px;">
+                        
+                        <div class="">
+                            <div class="card-header" id="headingOne">
+                                <h5 class="mb-0">
+                                    <span class="btn" data-toggle="collapse" data-target="#collapseOne"
+                                        aria-expanded="true" aria-controls="collapseOne">
+                                        Brend
+                                    </span>
+                                </h5>
+                            </div>
+
+                            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
+                                data-parent="#accordion">
+                                <div class="card-body">
+                                    <ul>
+                                        
+                                        <li style="list-style: none;">
+                                            {% if request.GET.brand == 'Apple'%}
+                                            <span><a href="/products"><span class="container" style="color: #2DD06E;">Apple
+                                                    
+                                            </span>
+                                        </a>
+                                                </span>
+                                                {% else %}
+                                                <span><a href="?brand=Apple" style="color: black;"><span class="container">Apple
+                                                    
+                                                </span>
+                                                {% endif %}
+                                            </li>
+                                        <li style="list-style: none;">
+                                            {% if request.GET.brand == 'Samsung'%}
+                                            <span><a href="/products"><span class="container" style="color: #2DD06E;">Samsung
+                                                    
+                                            </span>
+                                        </a>
+                                                </span>
+                                                {% else %}
+                                                <span><a href="?brand=Samsung" style="color: black;"><span class="container">Samsung
+                                                    
+                                                </span>
+                                                {% endif %}
+                                        </li>
+                                        <li style="list-style: none;">
+                                            {% if request.GET.brand == 'Xiaomi'%}
+                                            <span><a href="/products"><span class="container" style="color: #2DD06E;">Xiaomi
+                                                    
+                                            </span>
+                                        </a>
+                                                </span>
+                                                {% else %}
+                                                <span><a href="?brand=Xiaomi" style="color: black;"><span class="container">Xiaomi
+                                                    
+                                                </span>
+                                                {% endif %}
+                                        </li>
+                                        <li style="list-style: none;">
+                                            {% if request.GET.brand == 'Redmi'%}
+                                            <span><a href="/products"><span class="container" style="color: #2DD06E;">Redmi
+                                                    
+                                            </span>
+                                        </a>
+                                                </span>
+                                                {% else %}
+                                                <span><a href="?brand=Redmi" style="color: black;"><span class="container">Redmi
+                                                    
+                                                </span></a>
+                                                {% endif %}
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="">
+                            <div class="card-header" id="headingTwo">
+                                <h5 class="mb-0">
+                                    <span class="btn collapsed" data-toggle="collapse"
+                                        data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                        Form Factor
+                                    </span>
+                                </h5>
+                            </div>
+                            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
+                                data-parent="#accordion">
+                                <div class="card-body">
+                                    <ul>
+                                        <li style="list-style: none;">
+                                            {% if request.GET.form_factor == 'Smartphone'%}
+                                            <span><a href="/products"><span class="container" style="color: #2DD06E;">Smartphone
+                                                    
+                                            </span>
+                                        </a>
+                                                </span>
+                                                {% else %}
+                                                <span><a href="?form_factor=Smartphone" style="color: black;"><span class="container">Smartphone
+                                                    
+                                                </span>
+                                                {% endif %}
+                                        </li>
+                                        <li style="list-style: none;">
+                                            {% if request.GET.form_factor == 'Headphones'%}
+                                            <span><a href="/products"><span class="container" style="color: #2DD06E;">Headphones
+                                                    
+                                            </span>
+                                        </a>
+                                                </span>
+                                                {% else %}
+                                                <span><a href="?form_factor=Headphones" style="color: black;"><span class="container">Headphones
+                                                    
+                                                </span></a>
+                                                {% endif %}
+                                        </li>
+                                        <li style="list-style: none;">
+                                            <span><label class="container">Phone case
+                                                </label>
+                                        </li>
+                                        <li style="list-style: none;">
+                                            <span><label class="container">Charger
+                                                </label>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="">
+                            <div class="card-header" id="headingThree">
+                                <h5 class="mb-0">
+                                    <span class="btn collapsed" data-toggle="collapse"
+                                        data-target="#collapseThree" aria-expanded="false"
+                                        aria-controls="collapseThree">
+                                        Category
+                                    </span>
+                                </h5>
+                            </div>
+                            <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
+                                data-parent="#accordion">
+                                <div class="card-body">
+                                    <ul>
+                                        {% for category in categories %}
+                                        <li style="list-style: none;">
+                                            {% if request.GET.category == category.title %}
+                                           <a href="/products" style="color: #2DD06E;"><span><label class="container">{{category.title}}
+                                                </label></span></a>
+                                            {% else %}
+                                            <a href="?category={{category}}" style="color: black;"><span><label class="container">{{category.title}}
+                                            </label></span></a>
+                                            {% endif %}
+
+                                        </li>
+                                        {% endfor %}
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="">
+                            <div class="card-header" id="headingFour">
+                                <h5 class="mb-0">
+                                    <span class="btn collapsed" data-toggle="collapse"
+                                        data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                        Qiymət
+                                    </span>
+                                </h5>
+                            </div>
+                            <div id="collapseFour" class="collapse" aria-labelledby="headingFour"
+                                data-parent="#accordion">
+                                <div class="card-body">
+                                    <ul>
+                                        <li style="list-style: none;">
+                                            {% if request.GET.price == '0-500' %}
+                                            <a style="color: #2DD06E;" href="/products"><span><label class="container">0 <img style="margin-top: -5px;" src="{% static 'img/azn symbol.svg' %}" alt=""> - 500 <img style="margin-top: -5px;" src="{% static 'img/azn symbol.svg' %}" alt="">
+                                                </label></span></a>
+                                            {% else %}
+                                            <a style="color: black;" href="?price=0-500"><span><label class="container">0<img style="margin-top: -5px;" src="{% static 'img/azn.svg' %}" alt=""> - 500<img style="margin-top: -5px;" src="{% static 'img/azn.svg' %}" alt="">
+                                            </label></span></a>
+                                            {% endif %}
+                                        </li>
+                                        <li style="list-style: none;">
+                                            {% if request.GET.price == '500-1000' %}
+                                            <a style="color: #2DD06E;" href="/products"><span><label class="container">500 <img style="margin-top: -5px;" src="{% static 'img/azn symbol.svg' %}" alt=""> - 1000 <img style="margin-top: -5px;" src="{% static 'img/azn symbol.svg' %}" alt="">
+                                                </label></span></a>
+                                            {% else %}
+                                            <a style="color: black;" href="?price=500-1000"><span><label class="container">500<img style="margin-top: -5px;" src="{% static 'img/azn.svg' %}" alt=""> - 1000<img style="margin-top: -5px;" src="{% static 'img/azn.svg' %}" alt="">
+                                            </label></span></a>
+                                            {% endif %}
+                                        </li>
+                                        <li style="list-style: none;">
+                                            {% if request.GET.price == '1000-2000' %}
+                                            <a style="color: #2DD06E;" href="/products"><span><label class="container">1000 <img style="margin-top: -5px;" src="{% static 'img/azn symbol.svg' %}" alt=""> - 2000 <img style="margin-top: -5px;" src="{% static 'img/azn symbol.svg' %}" alt="">
+                                                </label></span></a>
+                                            {% else %}
+                                            <a style="color: black;" href="?price=1000-2000"><span><label class="container">1000<img style="margin-top: -5px;" src="{% static 'img/azn.svg' %}" alt=""> - 2000<img style="margin-top: -5px;" src="{% static 'img/azn.svg' %}" alt="">
+                                            </label></span></a>
+                                            {% endif %}
+                                        </li>
+                                        <li style="list-style: none;">
+                                            {% if request.GET.price == '2000' %}
+                                            <a style="color: #2DD06E;" href="/products"><span><label class="container">2000 və yuxarı <img style="margin-top: -5px;" src="{% static 'img/azn symbol.svg' %}" alt="">
+                                                </label></span></a>
+                                            {% else %}
+                                            <a style="color: black;" href="?price=2000"><span><label class="container">2000 və yuxarı<img style="margin-top: -5px;" src="{% static 'img/azn.svg' %}" alt="">
+                                            </label></span></a>
+                                            {% endif %}
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-9 col-12 second-list-part pt-5">
+                    
+                    <div
+                        style="padding-left: 65px; padding-right: 65px; display: flex; justify-content: space-between;" class="mehsul-tapildi">
+                        <span>{{products.count}} məhsul tapıldı</span>
+                        <div class="dropdown web-drop">
+                            <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                style="border: 1px solid #BDBDBD; width: 176px;">
+                                Ən yenilər
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <a class="dropdown-item" href="?title=news">Ən yenilər</a>
+                                <a class="dropdown-item" href="?title=cheap">Əvvəlcə ucuz</a>
+                                <a class="dropdown-item" href="?title=expensive">Əvvəlcə bahalı</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row list-row" style="padding: 65px; padding-top: 42px; margin-bottom: 72px;">
+                        {% for product in products %}
+                    <div class="col-md-4 mb-4" style="height: 386px;">
+                        <div class="card" style="width: 18rem; height: 386px">
+                          <div class="heart-cont" style="display: flex;
+                          justify-content: end;">
+                            <div style="border: 1px solid #F2F2F2; border-radius: 50%;
+                            height: 40px;
+                            width: 40px;
+                            margin-top: 10px;
+                            margin-right: 10px;">
+                            {% if product in request.user.user_wishlist.product.all %}
+                            <img class="active-heart" src="data:image/png;base64,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" alt="" id="{{product.id}}" style="margin-top: 9px; margin-left: 8px; width: 23px;">
+                            {% else %}
+                              <img src="{% static 'img/heart2.svg' %}" alt="" class="heart-deactive" id="{{product.id}}" style="margin-top: 7px; margin-left: 7px;">
+                            {% endif %}
+                            </div>
+                          </div>
+                        <a href="{% url 'core:product' product.slug %}" style="color: black; text-decoration: none;">
+
+                            <div style="text-align: center;">
+                              {% for image in product.product_image.all|slice:"1" %}
+                              <img class="card-img-top" style="width: 215px;" src="/media/{{image}}" alt="Card image cap">
+                              {% endfor %}
+                        </div>
+                            <div class="card-body">
+                              <h5 class="card-title" style="font-size: 16px;">{{product.brand}} {{product.title}}</h5>
+                              
+                              <p class="card-text">{{product.price}} <img style="margin-top: -5px;" src="{% static 'img/azn.svg' %}" alt=""></p>
+                              
+                            </div>
+                        </a>
+
+                          </div>
+                    </div>
+                  {% endfor %}
+                        
+                    </div>
+                    <div style="display: flex; justify-content: center;">
+                        <nav aria-label="Page navigation example">
+                            <ul class="pagination">
+                              <li class="page-item">
+                                {% if page_obj.has_previous %}
+                                <a class="page-link" href="?page={{ page_obj.previous_page_number }}" aria-label="Previous">
+                                  <img src="{% static 'img/pag1.svg' %}" alt="" style="margin-top: -6px;">
+                                </a>
+                                {% endif %}
+                              </li>
+                              <h1 class="d-none" id="num_pages">{{ page_obj.paginator.num_pages }}</h1>
+                              <li class="page-item"><a class="page-link num" href="?page={{ page_obj.number }}" style="font-size: 20px; color: #4F4F4F;">{{ page_obj.number }}</a></li>
+                              {% if page_obj.has_next %}
+                              <li class="page-item"><a class="page-link num" id="from-pagination" href="?page={{ page_obj.next_page_number }}" style="font-size: 20px; color: #4F4F4F;">{{ page_obj.next_page_number }}</a></li>
+                              <li class="page-item"><a class="page-link num" id="last-pagination" href="" style="font-size: 20px; color: #4F4F4F;">3</a></li>
+                              <li class="page-item">
+                                {% endif %}
+                                {% if page_obj.has_next %}
+                                <a class="page-link" href="?page={{ page_obj.next_page_number }}" aria-label="Next">
+                                  <img src="{% static 'img/pag2.svg' %}" alt="" style="margin-top: -6px;">
+                                </a>
+                                {% endif %}
+                              </li>
+                            </ul>
+                          </nav>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    {% endblock %}
+
+
+    {% block js %}
+    <script src="{% static 'js/filter-button.js' %}"></script>
+    <script src="{% static 'js/paginator.js' %}"></script>
+    <script>
+        document.querySelectorAll('.filter-radios').forEach(e => {
+            e.addEventListener('click', () => {
+                document.getElementById('filter-formm').submit()
+            })
+        })
+    </script>
+    {% endblock %}
