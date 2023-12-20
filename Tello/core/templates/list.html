@@ -102,7 +102,7 @@
                                 <h5 class="mb-0">
                                     <span class="btn" data-toggle="collapse" data-target="#collapseOne"
                                         aria-expanded="true" aria-controls="collapseOne">
-                                        Brend
+                                        Haradan
                                     </span>
                                 </h5>
                             </div>
@@ -113,107 +113,56 @@
                                     <ul>
                                         
                                         <li style="list-style: none;">
-                                            {% if request.GET.brand == 'Apple'%}
-                                            <span><a href="/products"><span class="container" style="color: #2DD06E;">Apple
+                                            {% if request.GET.brand == 'Baku'%}
+                                            <span><a href="/products"><span class="container" style="color: #2DD06E;">Baku
                                                     
                                             </span>
                                         </a>
                                                 </span>
                                                 {% else %}
-                                                <span><a href="?brand=Apple" style="color: black;"><span class="container">Apple
+                                                <span><a href="?brand=Baku" style="color: black;"><span class="container">Baku
                                                     
                                                 </span>
                                                 {% endif %}
                                             </li>
                                         <li style="list-style: none;">
-                                            {% if request.GET.brand == 'Samsung'%}
-                                            <span><a href="/products"><span class="container" style="color: #2DD06E;">Samsung
+                                            {% if request.GET.brand == 'Sumqayit'%}
+                                            <span><a href="/products"><span class="container" style="color: #2DD06E;">Sumqayit
                                                     
                                             </span>
                                         </a>
                                                 </span>
                                                 {% else %}
-                                                <span><a href="?brand=Samsung" style="color: black;"><span class="container">Samsung
+                                                <span><a href="?brand=Sumqayit" style="color: black;"><span class="container">Sumqayit
                                                     
                                                 </span>
                                                 {% endif %}
                                         </li>
                                         <li style="list-style: none;">
-                                            {% if request.GET.brand == 'Xiaomi'%}
-                                            <span><a href="/products"><span class="container" style="color: #2DD06E;">Xiaomi
+                                            {% if request.GET.brand == 'Nakchivan'%}
+                                            <span><a href="/products"><span class="container" style="color: #2DD06E;">Nakchivan
                                                     
                                             </span>
                                         </a>
                                                 </span>
                                                 {% else %}
-                                                <span><a href="?brand=Xiaomi" style="color: black;"><span class="container">Xiaomi
+                                                <span><a href="?brand=Nakchivan" style="color: black;"><span class="container">Nakchivan
                                                     
                                                 </span>
                                                 {% endif %}
                                         </li>
                                         <li style="list-style: none;">
-                                            {% if request.GET.brand == 'Redmi'%}
-                                            <span><a href="/products"><span class="container" style="color: #2DD06E;">Redmi
+                                            {% if request.GET.brand == 'Ganja'%}
+                                            <span><a href="/products"><span class="container" style="color: #2DD06E;">Ganja
                                                     
                                             </span>
                                         </a>
                                                 </span>
                                                 {% else %}
-                                                <span><a href="?brand=Redmi" style="color: black;"><span class="container">Redmi
+                                                <span><a href="?brand=Ganja" style="color: black;"><span class="container">Ganja
                                                     
                                                 </span></a>
                                                 {% endif %}
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="">
-                            <div class="card-header" id="headingTwo">
-                                <h5 class="mb-0">
-                                    <span class="btn collapsed" data-toggle="collapse"
-                                        data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                        Form Factor
-                                    </span>
-                                </h5>
-                            </div>
-                            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
-                                data-parent="#accordion">
-                                <div class="card-body">
-                                    <ul>
-                                        <li style="list-style: none;">
-                                            {% if request.GET.form_factor == 'Smartphone'%}
-                                            <span><a href="/products"><span class="container" style="color: #2DD06E;">Smartphone
-                                                    
-                                            </span>
-                                        </a>
-                                                </span>
-                                                {% else %}
-                                                <span><a href="?form_factor=Smartphone" style="color: black;"><span class="container">Smartphone
-                                                    
-                                                </span>
-                                                {% endif %}
-                                        </li>
-                                        <li style="list-style: none;">
-                                            {% if request.GET.form_factor == 'Headphones'%}
-                                            <span><a href="/products"><span class="container" style="color: #2DD06E;">Headphones
-                                                    
-                                            </span>
-                                        </a>
-                                                </span>
-                                                {% else %}
-                                                <span><a href="?form_factor=Headphones" style="color: black;"><span class="container">Headphones
-                                                    
-                                                </span></a>
-                                                {% endif %}
-                                        </li>
-                                        <li style="list-style: none;">
-                                            <span><label class="container">Phone case
-                                                </label>
-                                        </li>
-                                        <li style="list-style: none;">
-                                            <span><label class="container">Charger
-                                                </label>
                                         </li>
                                     </ul>
                                 </div>
@@ -225,7 +174,7 @@
                                     <span class="btn collapsed" data-toggle="collapse"
                                         data-target="#collapseThree" aria-expanded="false"
                                         aria-controls="collapseThree">
-                                        Category
+                                        Haraya
                                     </span>
                                 </h5>
                             </div>
@@ -263,38 +212,29 @@
                                 <div class="card-body">
                                     <ul>
                                         <li style="list-style: none;">
-                                            {% if request.GET.price == '0-500' %}
-                                            <a style="color: #2DD06E;" href="/products"><span><label class="container">0 <img style="margin-top: -5px;" src="{% static 'img/azn symbol.svg' %}" alt=""> - 500 <img style="margin-top: -5px;" src="{% static 'img/azn symbol.svg' %}" alt="">
+                                            {% if request.GET.price == '0-5' %}
+                                            <a style="color: #2DD06E;" href="/products"><span><label class="container">0 <img style="margin-top: -5px;" src="{% static 'img/azn symbol.svg' %}" alt=""> - 5 <img style="margin-top: -5px;" src="{% static 'img/azn symbol.svg' %}" alt="">
                                                 </label></span></a>
                                             {% else %}
-                                            <a style="color: black;" href="?price=0-500"><span><label class="container">0<img style="margin-top: -5px;" src="{% static 'img/azn.svg' %}" alt=""> - 500<img style="margin-top: -5px;" src="{% static 'img/azn.svg' %}" alt="">
+                                            <a style="color: black;" href="?price=0-500"><span><label class="container">0<img style="margin-top: -5px;" src="{% static 'img/azn.svg' %}" alt=""> - 5<img style="margin-top: -5px;" src="{% static 'img/azn.svg' %}" alt="">
                                             </label></span></a>
                                             {% endif %}
                                         </li>
                                         <li style="list-style: none;">
-                                            {% if request.GET.price == '500-1000' %}
-                                            <a style="color: #2DD06E;" href="/products"><span><label class="container">500 <img style="margin-top: -5px;" src="{% static 'img/azn symbol.svg' %}" alt=""> - 1000 <img style="margin-top: -5px;" src="{% static 'img/azn symbol.svg' %}" alt="">
+                                            {% if request.GET.price == '5-20' %}
+                                            <a style="color: #2DD06E;" href="/products"><span><label class="container">5 <img style="margin-top: -5px;" src="{% static 'img/azn symbol.svg' %}" alt=""> - 20 <img style="margin-top: -5px;" src="{% static 'img/azn symbol.svg' %}" alt="">
                                                 </label></span></a>
                                             {% else %}
-                                            <a style="color: black;" href="?price=500-1000"><span><label class="container">500<img style="margin-top: -5px;" src="{% static 'img/azn.svg' %}" alt=""> - 1000<img style="margin-top: -5px;" src="{% static 'img/azn.svg' %}" alt="">
+                                            <a style="color: black;" href="?price=500-1000"><span><label class="container">5<img style="margin-top: -5px;" src="{% static 'img/azn.svg' %}" alt=""> - 20<img style="margin-top: -5px;" src="{% static 'img/azn.svg' %}" alt="">
                                             </label></span></a>
                                             {% endif %}
                                         </li>
                                         <li style="list-style: none;">
-                                            {% if request.GET.price == '1000-2000' %}
-                                            <a style="color: #2DD06E;" href="/products"><span><label class="container">1000 <img style="margin-top: -5px;" src="{% static 'img/azn symbol.svg' %}" alt=""> - 2000 <img style="margin-top: -5px;" src="{% static 'img/azn symbol.svg' %}" alt="">
+                                            {% if request.GET.price == '20-50' %}
+                                            <a style="color: #2DD06E;" href="/products"><span><label class="container">20 <img style="margin-top: -5px;" src="{% static 'img/azn symbol.svg' %}" alt=""> - 50 <img style="margin-top: -5px;" src="{% static 'img/azn symbol.svg' %}" alt="">
                                                 </label></span></a>
                                             {% else %}
-                                            <a style="color: black;" href="?price=1000-2000"><span><label class="container">1000<img style="margin-top: -5px;" src="{% static 'img/azn.svg' %}" alt=""> - 2000<img style="margin-top: -5px;" src="{% static 'img/azn.svg' %}" alt="">
-                                            </label></span></a>
-                                            {% endif %}
-                                        </li>
-                                        <li style="list-style: none;">
-                                            {% if request.GET.price == '2000' %}
-                                            <a style="color: #2DD06E;" href="/products"><span><label class="container">2000 və yuxarı <img style="margin-top: -5px;" src="{% static 'img/azn symbol.svg' %}" alt="">
-                                                </label></span></a>
-                                            {% else %}
-                                            <a style="color: black;" href="?price=2000"><span><label class="container">2000 və yuxarı<img style="margin-top: -5px;" src="{% static 'img/azn.svg' %}" alt="">
+                                            <a style="color: black;" href="?price=1000-2000"><span><label class="container">20<img style="margin-top: -5px;" src="{% static 'img/azn.svg' %}" alt=""> - 50<img style="margin-top: -5px;" src="{% static 'img/azn.svg' %}" alt="">
                                             </label></span></a>
                                             {% endif %}
                                         </li>
