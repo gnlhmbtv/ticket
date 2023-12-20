@@ -4,7 +4,7 @@ from accounts.models import *
 
 class Product(models.Model):
     title = models.CharField(max_length=100)
-    start = models.TextField('Start')
+    description = models.TextField('Description')
     price = models.DecimalField('Price',max_digits=6, decimal_places=2)
     brand = models.CharField(max_length=100)
     form_factor = models.CharField(max_length=100)
