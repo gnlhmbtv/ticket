@@ -16,10 +16,10 @@
             
             <div class="carousel-inner">
               <div class="carousel-item active">
-                <img class="d-block w-100" src="{% static 'img/Screen Shot 2021-09-08 at 17.27.18.png' %}" alt="First slide">
+                <img class="d-block w-100" src="{% static 'img/Slide1.png' %}" alt="First slide">
               </div>
               <div class="carousel-item">
-                <img class="d-block w-100" src="{% static 'img/Screen Shot 2021-09-08 at 18.01.15.png' %}" alt="Second slide">
+                <img class="d-block w-100" src="{% static 'img/Slide2.png' %}" alt="Second slide">
               </div>
               <div class="carousel-item">
                 <img class="d-block w-100" src="{% static 'img/Screen Shot 2021-09-08 at 17.52.01.png' %}" alt="Third slide">
@@ -53,323 +53,53 @@
               </ol>
           </div>
 
-          <div class="cards-container" style="padding: 75px;">
-            <div class="card-section">
-              <div class="headings">
-                  <h4 style="font-size: 20px;">En cox satilan mehsullar</h4>
-              </div>
-              <div class="cards-row mt-5">
-                <div class="row">
-                  {% for product in products %}
-                    <div class="col-md-3" style="height: 386px;">
-                        <div class="card" style="width: 18rem;">
-                          <div class="heart-cont" style="display: flex;
-                          justify-content: end;">
-                            <div style="border: 1px solid #F2F2F2; border-radius: 50%;
-                            height: 40px;
-                            width: 40px;
-                            margin-top: 10px;
-                            margin-right: 10px;">
-                            {% if product in request.user.user_wishlist.product.all %}
-                            <img class="active-heart" src="data:image/png;base64,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" alt="" id="{{product.id}}" style="margin-top: 9px; margin-left: 8px; width: 23px;">
-                            {% else %}
-                              <img src="{% static 'img/heart2.svg' %}" alt="" class="heart-deactive" id="{{product.id}}" style="margin-top: 7px; margin-left: 7px;">
-                            {% endif %}
-                            </div>
-                          </div>
-                        <a href="{% url 'core:product' product.slug %}" style="color: black; text-decoration: none;">
-
-                            <div style="text-align: center;">
-                              {% for image in product.product_image.all|slice:"1" %}
-                              <img class="card-img-top" style="width: 215px;" src="media/{{image}}" alt="Card image cap">
-                              {% endfor %}
-                        </div>
-                            <div class="card-body">
-                              <h5 class="card-title" style="font-size: 16px;">{{product.brand}} {{product.title}}</h5>
-                              
-                              <p class="card-text">{{product.price}} <img style="margin-top: -5px;" src="{% static 'img/azn.svg' %}" alt=""></p>
-                              
-                            </div>
-                        </a>
-
-                          </div>
-                    </div>
-                  {% endfor %}
-                    <!-- <div class="col-md-3" style="height: 386px;">
-                      <a href="product.html" style="color: black; text-decoration: none;">
-                      <div class="card" style="width: 18rem;">
-                        <div class="heart-cont" style="display: flex;
-                        justify-content: end;">
-                          <div style="border: 1px solid #F2F2F2; border-radius: 50%;
-                          height: 40px;
-                          width: 40px;
-                          margin-top: 10px;
-                          margin-right: 10px;">
-                            <img src="img/heart2.svg" alt="" style="margin-top: 7px; margin-left: 7px;">
-
-                          </div>
-                        </div>
-                          <div style="text-align: center;">
-                          <img class="card-img-top" style="width: 215px;" src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-12-pro-family-hero?wid=940&hei=1112&fmt=jpeg&qlt=80&.v=1604021663000" alt="Card image cap">
-                      </div>
-                          <div class="card-body">
-                            <h5 class="card-title" style="font-size: 16px;">Apple iPhone 12, 64 GB, Bənövşəyi</h5>
-                            
-                            <p class="card-text" style="color: #DB2C66;"><span class="card-text" style="font-size: 14px; text-decoration: line-through; margin-right: 10px; color: gray;">2400 $ </span>2400 $</p>
-                            
-                          </div>
-                        </div>
-                      </a>
-                  </div>
-                  <div class="col-md-3" style="height: 386px;">
-                    <a href="product.html" style="color: black; text-decoration: none;">
-                    <div class="card" style="width: 18rem;">
-                      <div class="heart-cont" style="display: flex;
-                      justify-content: end;">
-                        <div style="border: 1px solid #F2F2F2; border-radius: 50%;
-                        height: 40px;
-                        width: 40px;
-                        margin-top: 10px;
-                        margin-right: 10px;">
-                          <img src="img/heart2.svg" alt="" style="margin-top: 7px; margin-left: 7px;">
-
-                        </div>
-                      </div>
-                        <div style="text-align: center;">
-                        <img class="card-img-top" style="width: 215px;" src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-12-pro-family-hero?wid=940&hei=1112&fmt=jpeg&qlt=80&.v=1604021663000" alt="Card image cap">
-                    </div>
-                        <div class="card-body">
-                          <h5 class="card-title" style="font-size: 16px;">Apple iPhone 12, 64 GB, Bənövşəyi</h5>
-                          
-                          <p class="card-text" style="color: #DB2C66;"><span class="card-text" style="font-size: 14px; text-decoration: line-through; margin-right: 10px; color: gray;">2400 $ </span>2400 $</p>
-                          
-                        </div>
-                      </div>
-                    </a>
-                </div>
-                <div class="col-md-3" style="height: 386px;">
-                  <a href="" style="color: black; text-decoration: none;">
-                  <div class="card" style="width: 18rem;">
-                    <div class="heart-cont" style="display: flex;
-                    justify-content: end;">
-                      <div style="border: 1px solid #F2F2F2; border-radius: 50%;
-                      height: 40px;
-                      width: 40px;
-                      margin-top: 10px;
-                      margin-right: 10px;">
-                        <img src="img/heart2.svg" alt="" style="margin-top: 7px; margin-left: 7px;">
-
-                      </div>
-                    </div>
-                      <div style="text-align: center;">
-                      <img class="card-img-top" style="width: 215px;" src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-12-pro-family-hero?wid=940&hei=1112&fmt=jpeg&qlt=80&.v=1604021663000" alt="Card image cap">
-                  </div>
-                      <div class="card-body">
-                        <h5 class="card-title" style="font-size: 16px;">Apple iPhone 12, 64 GB, Bənövşəyi</h5>
-                        
-                        <p class="card-text" style="color: #DB2C66;"><span class="card-text" style="font-size: 14px; text-decoration: line-through; margin-right: 10px; color: gray;">2400 $ </span>2400 $</p>
-                        
-                      </div>
-                    </div>
-                  </a>
-              </div> -->
-          </div>
-      </div>
-    </div>
-    <div class="card-section" style="margin-top: 80px;">
-        <div class="headings">
-            <h4 style="font-size: 20px;">Yeni gelen mehsullar</h4>
-        </div>
-        <div class="cards-row mt-5">
-          <div class="row">
-            {% for product in products %}
-                    <div class="col-md-3" style="height: 386px;">
-                        <div class="card" style="width: 18rem;">
-                          <div class="heart-cont" style="display: flex;
-                          justify-content: end;">
-                            <div style="border: 1px solid #F2F2F2; border-radius: 50%;
-                            height: 40px;
-                            width: 40px;
-                            margin-top: 10px;
-                            margin-right: 10px;">
-                            {% if product in request.user.user_wishlist.product.all %}
-                            <img class="active-heart" src="data:image/png;base64,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" alt="" id="{{product.id}}" style="margin-top: 9px; margin-left: 8px; width: 23px;">
-                            {% else %}
-                              <img src="{% static 'img/heart2.svg' %}" alt="" class="heart-deactive" id="{{product.id}}" style="margin-top: 7px; margin-left: 7px;">
-                            {% endif %}
-                            </div>
-                          </div>
-                        <a href="{% url 'core:product' product.slug %}" style="color: black; text-decoration: none;">
-
-                            <div style="text-align: center;">
-                              {% for image in product.product_image.all|slice:"1" %}
-                              <img class="card-img-top" style="width: 215px;" src="media/{{image}}" alt="Card image cap">
-                              {% endfor %}
-                        </div>
-                            <div class="card-body">
-                              <h5 class="card-title" style="font-size: 16px;">{{product.brand}} {{product.title}}</h5>
-                              
-                              <p class="card-text">{{product.price}} <img style="margin-top: -5px;" src="{% static 'img/azn.svg' %}" alt=""></p>
-                              
-                            </div>
-                        </a>
-
-                          </div>
-                    </div>
-                  {% endfor %}
-    </div>
-</div>
-</div>
-      </div>
+          
       <div class="banners">
         <div style="padding: 75px;" class="banners-inner">
+          <h2 style="margin-left: 35%;">Hərəkət cədvəli</h2>
             <div class="row">
-                <div class="col-md-6">
-                    <div style="width: 100%; border-radius: 8px;">
-                        <img style="width: 100%; border-radius: 8px;" src="https://cdn1.it4profit.com/AfrOrF3gWeDA6VOlDG4TzxMv39O7MXnF4CXpKUwGqRM/resize:fit:1400:600:0/bg:ffffff/q:100/plain/s3://complex-images/13/2375/2100-ru-1.png@jpeg" alt="">
+              
+                <div class="col-md-12">
+                    <div style="width: 100%; border-radius: 15px;">
+                        <img style="width: 100%; border-radius: 8px;" src="{% static 'img/q1.png' %}" alt="">
                     </div>
                 </div>
-                <div class="col-md-6">
+                <!-- <div class="col-md-6">
                     <div style="width: 100%; border-radius: 8px;">
                         <img style="width: 100%; border-radius: 8px;" src="https://cdn1.it4profit.com/AfrOrF3gWeDA6VOlDG4TzxMv39O7MXnF4CXpKUwGqRM/resize:fit:1400:600:0/bg:f5f5f7/q:100/plain/s3://complex-images/13/2185/2100-ru-1.png@jpeg" alt="">
 
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
       </div>
-      <div class="cards-container2" style="padding: 75px;">
-        <div class="card-section">
-          <div class="headings">
-              <h4 style="font-size: 20px;">Yeni aksessuarlar</h4>
-          </div>
-          <div class="cards-row mt-5">
-            <div class="row">
-              {% for product in accessories %}
-                    <div class="col-md-3" style="height: 386px;">
-                        <div class="card" style="width: 18rem;">
-                          <div class="heart-cont" style="display: flex;
-                          justify-content: end;">
-                            <div style="border: 1px solid #F2F2F2; border-radius: 50%;
-                            height: 40px;
-                            width: 40px;
-                            margin-top: 10px;
-                            margin-right: 10px;">
-                            {% if product in request.user.user_wishlist.product.all %}
-                            <img class="active-heart" src="data:image/png;base64,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" alt="" id="{{product.id}}" style="margin-top: 9px; margin-left: 8px; width: 23px;">
-                            {% else %}
-                              <img src="{% static 'img/heart2.svg' %}" alt="" class="heart-deactive" id="{{product.id}}" style="margin-top: 7px; margin-left: 7px;">
-                            {% endif %}
-                            </div>
-                          </div>
-                        <a href="{% url 'core:product' product.slug %}" style="color: black; text-decoration: none;">
-
-                            <div style="text-align: center;">
-                              {% for image in product.product_image.all|slice:"1" %}
-                              <img class="card-img-top" style="width: 215px;" src="media/{{image}}" alt="Card image cap">
-                              {% endfor %}
-                        </div>
-                            <div class="card-body">
-                              <h5 class="card-title" style="font-size: 16px;">{{product.brand}} {{product.title}}</h5>
-                              
-                              <p class="card-text">{{product.price}} <img style="margin-top: -5px;" src="{% static 'img/azn.svg' %}" alt=""></p>
-                              
-                            </div>
-                        </a>
-
-                          </div>
-                    </div>
-                  {% endfor %}
-      </div>
-  </div>
-</div>
-      </div>
-      <div class="mt-5 big-banners"  style="padding: 75px;">
-        <div class="row">
-          <div class="col-md-6 col-12 phones-banner" style="height: 728px; background: #F2F2F2; border-radius: 8px; padding-left: 40px; padding-top: 40px; padding-right: 0;">
-            <h3 style="font-size: 24px;">Telefonlar</h3>
-            <h4 style="font-size: 16px; margin-top: 24px; font-weight: 300; margin-bottom: 24px;">Mehsul sayi: <span>322</span></h4>
-            <a href="{% url 'core:products' %}?category=Smartphones" style="font-size: 16px; font-weight: 300;">Məhsullara keçid <span><img src="{% static 'img/arrow-ios-right.png' %}" alt=""></span></a>
-            <img src="{% static 'img/image 6xiaomi.png' %}" alt="" style="width: 100%;
-            margin-top: 104px;">
-          </div>
-          <div class="col-md-6 col-12 other-banners" style="height: 728px;">
-            <div class="col-md-12 smart" style="background: #F2F2F2; height: 352px; border-radius: 8px; padding-left: 40px; padding-top: 40px;">
-              <h3 style="font-size: 24px;">Smart Saat</h3>
-              <h4 style="font-size: 16px; margin-top: 24px; font-weight: 300; margin-bottom: 24px;">Mehsul sayi: <span>322</span></h4>
-              <a href="{% url 'core:products' %}?form_factor=SmartWatch" style="font-size: 16px; font-weight: 300;">Məhsullara keçid <span><img src="{% static 'img/arrow-ios-right.png' %}" alt=""></span></a>
-              <br>
-              <img src="{% static 'img/image 7.png' %}" class="banner-image" alt="" style="width: 40%; margin-left: 315px;
-              margin-top: -52px;">
-            </div>
-            <div class="col-md-12 smart" style="background: #F2F2F2; height: 352px; margin-top: 24px; border-radius: 8px; padding-left: 40px; padding-top: 40px;">
-              <h3 style="font-size: 24px;">Aksesuar</h3>
-              <h4 style="font-size: 16px; margin-top: 24px; font-weight: 300; margin-bottom: 24px;">Mehsul sayi: <span>322</span></h4>
-              <a href="{% url 'core:products' %}?category=Accessories" style="font-size: 16px; font-weight: 300;">Məhsullara keçid <span><img src="{% static 'img/arrow-ios-right.png' %}" alt=""></span></a>
-              <br>
-              <img src="{% static 'img/image 6.png' %}" class="banner-image2" alt="" style="width: 60%; margin-left: 220px;
-              margin-top: -100px;">
-            </div>
-          </div>
-        </div>
-      </div>
+   
 
       <div class="services" style="margin-bottom: 81px;">
         <div class="" style="padding: 75px;">
           <div class="row">
             <div class="col-md-4 text-center">
               <img src="{% static 'img/box.svg' %}" alt="" style="margin-bottom: 40px;">
-              <h4 style="font-size: 20px; margin-bottom: 24px;">Catdirilma</h4>
-              <p class="icon-texts" style="font-size: 16px; width: 320px; margin: 0 auto;">Lorem ipsum dolor sit amet, consectetur adipiscing elit </p>
+              <h4 style="font-size: 20px; margin-bottom: 24px;">Biletlərin sürətli
+                alışı</h4>
+              <p class="icon-texts" style="font-size: 16px; width: 320px; margin: 0 auto;">Ölkədaxili və beynəlxalq istiqamətlərdə hərəkət edən sərnişin qatarlarına onlayn biletlərin alınması üçün elektron xidmətlər təklif edirik. </p>
             </div>
             <div class="col-md-4 text-center">
               <img src="{% static 'img/card-pos.svg' %}" alt="" style="margin-bottom: 40px;">
-              <h4 style="font-size: 20px; margin-bottom: 24px;">Kredit</h4>
-              <p class="icon-texts" style="font-size: 16px; width: 320px; margin: 0 auto;">Lorem ipsum dolor sit amet, consectetur adipiscing elit </p>
+              <h4 style="font-size: 20px; margin-bottom: 24px;">Qatarların onlayn
+                cədvəli</h4>
+              <p class="icon-texts" style="font-size: 16px; width: 320px; margin: 0 auto;">Saytımızın ana səhifəsində yerləşdirilən sərnişin qatarlarının onlayn hərəkət cədvəli real vaxt rejimində yenilənərək ən son vəziyyəti göstərir.
+              </p>
             </div>
             <div class="col-md-4 text-center">
               <img src="{% static 'img/medal-star.svg' %}" alt="" style="margin-bottom: 40px;">
-              <h4 style="font-size: 20px; margin-bottom: 24px;">Zəmanət</h4>
-              <p class="icon-texts" style="font-size: 16px; width: 320px; margin: 0 auto;">Lorem ipsum dolor sit amet, consectetur adipiscing elit </p>
+              <h4 style="font-size: 20px; margin-bottom: 24px;">24/7 Əlaqə
+                Mərkəzi</h4>
+              <p class="icon-texts" style="font-size: 16px; width: 320px; margin: 0 auto;">Xidmətlərimizdən istifadəni daha rahat və operativ şəkildə təşkil etmək məqsədilə Əlaqə Mərkəzi həftənin 7 günü 24 saat işləyir.</p>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- <div class="brands">
-        <div class="your-class" style="width: 90%;margin: 0 auto;">
-          <div style="background-color: white; border-radius: 8px; height: 80px; margin-bottom: 32px;">
-            <img style="margin: 0 auto; margin-top: 12px;" src="https://media.idownloadblog.com/wp-content/uploads/2018/07/Apple-logo-black-and-white.png" alt="">
-          </div>
-          <div style="background-color: white; border-radius: 8px; height: 80px; margin-bottom: 32px;">
-            <img style="margin: 0 auto; margin-top: 12px;" src="https://logos-world.net/wp-content/uploads/2020/04/Samsung-Logo.png" alt="">
-          </div>
-          <div style="background-color: white; border-radius: 8px; height: 80px; margin-bottom: 32px;">
-            <img style="margin: 0 auto; margin-top: 12px;" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Xiaomi_logo_%282021-%29.svg/2048px-Xiaomi_logo_%282021-%29.svg.png" alt="">
-          </div>
-          <div style="background-color: white; border-radius: 8px; height: 80px; margin-bottom: 32px;">
-            <img style="margin: 0 auto; margin-top: 12px;" src="img/toshiba.png" alt="">
-          </div>
-          <div style="background-color: white; border-radius: 8px; height: 80px; margin-bottom: 32px;">
-            <img style="margin: 0 auto; margin-top: 12px;" src="img/philips.png" alt="">
-          </div>
-          <div style="background-color: white; border-radius: 8px; height: 80px; margin-bottom: 32px;">
-            <img style="margin: 0 auto; margin-top: 12px;" src="img/toshiba.png" alt="">
-          </div>
-          <div style="background-color: white; border-radius: 8px; height: 80px; margin-bottom: 32px;">
-            <img style="margin: 0 auto; margin-top: 12px;" src="img/philips.png" alt="">
-          </div>
-          <div style="background-color: white; border-radius: 8px; height: 80px; margin-bottom: 32px;">
-            <img style="margin: 0 auto; margin-top: 12px;" src="img/toshiba.png" alt="">
-          </div>
-          <div style="background-color: white; border-radius: 8px; height: 80px; margin-bottom: 32px;">
-            <img style="margin: 0 auto; margin-top: 12px;" src="img/philips.png" alt="">
-          </div>
-          <div style="background-color: white; border-radius: 8px; height: 80px; margin-bottom: 32px;">
-            <img style="margin: 0 auto; margin-top: 12px;" src="img/toshiba.png" alt="">
-          </div>
-      
-      
-      </div>
-      </div> -->
+    
       {% endblock %}
